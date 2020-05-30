@@ -19,129 +19,29 @@
   
   <mat-sidenav-container>
   <!--------------------------------------------------------------------Start of SideNav(My profile)------------------------------------------------>
-      <mat-sidenav mode="push" [(opened)]="opened"  style="animation: gen_css_kf_24 400ms linear 0ms 1 normal forwards running;">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="panel panel-default">
-                <div class="panel-heading" style="height:40px">My Profile</div>
-                  <div class="panel-body">
-                    <div class="row">
-                      <div class="col-xs-6">
-                        
-                        <label for="usr">Name:</label>
-                        <input type="text" class="form-control" style="height:30px" id="inputStreet" placeholder="Name" value='{{profile["p_name"]}}'>
-                      </div>
-                      <div class="col-xs-6" >
-                        
-                        <label for="usr">DOB:</label>
-                        <input type="text" class="form-control"  style="height:30px" id="inputNumber" placeholder="DOB" value='{{profile["p_dob"]}}'>
-                      </div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-xs-6">
-                        <label for="usr">Address:</label>
-                        <input type="text" class="form-control" style="height:30px" id="inputStreet" placeholder="Address" value='{{profile["p_address"]}}'>
-                      </div>
-                      <div class="col-xs-6" >
-                        
-                        <label for="usr">Email:</label>
-                        <input type="text" class="form-control"  style="height:30px" id="inputNumber" placeholder="Email" value='{{profile["p_email"]}}'>
-                      </div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-xs-6">
-                        <label for="usr">Reffered By:</label>
-                        <input type="text" class="form-control" style="height:30px" id="inputStreet" placeholder="Reffered By" value='{{profile[""]}}'>
-                      </div>
-                      <div class="col-xs-6" >
-                        
-                        <label for="usr">Family:</label>
-                        <input type="text" class="form-control"  style="height:30px" id="inputNumber" placeholder="Family" value='{{profile[""]}}'>
-                      </div>
-                    </div>
-  
-                    <div class="row">
-                      <div class="col-xs-6">
-                        <label for="usr">Mobile No.:</label>
-                        <input type="text" class="form-control" style="height:30px" id="inputStreet" placeholder="Mobile No." value='{{profile["p_mobile"]}}'>
-                      </div>
-                      <div class="col-xs-6" >
-                        
-                        <label for="usr">Anniversary:</label>
-                        <input type="text" class="form-control"  style="height:30px" id="inputNumber" placeholder="Anniversary" value='{{profile["p_anniversary"]}}'>
-                      </div>
-                    </div>
-           
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div class="panel panel-default">
-                        <div class="panel-heading" style="height:40px">Dental History</div>
-                          <div class="panel-body">
-                            <div class="row">
-                              <div class="col-xs-6">
-                                <label for="usr">Previous dentist:</label>
-                                <input type="text" class="form-control" style="height:30px" id="inputStreet" placeholder="previous dentist">
-                              </div>
-                              <div class="col-xs-6" >
-                                
-                                <label for="usr">Previous dental treatments:</label>
-                                <input type="text" class="form-control"  style="height:30px" id="inputNumber" placeholder="previous dental treatments">
-                              </div>
-                            </div>
-        
-                            <div class="row">
-                              <div class="col-xs-6">
-                                <label for="usr">Routine svcling:</label>
-                                <input type="text" class="form-control" style="height:30px" id="inputStreet" placeholder="routine svcling">
-                              </div>
-                              <div class="col-xs-6" >
-                                
-                                <label for="usr">Habits:</label>
-                                <input type="text" class="form-control"  style="height:30px" id="inputNumber" placeholder="Habits:">
-                              </div>
-                            </div>
-        
-                            <div class="row">
-                              <div class="col-xs-6">
-                                <label for="usr">Brushing:</label>
-                                <input type="text" class="form-control" style="height:30px" id="inputStreet" placeholder="Brushing">
-                              </div>
-                              <div class="col-xs-6" >
-                                
-                                <label for="usr">Level of Hygine:</label>
-                                <input type="text" class="form-control"  style="height:30px" id="inputNumber" placeholder="level of hygine">
-                              </div>
-                            </div>
-        
-                            <div class="row">
-                              <div class="col-xs-6">
-                                <label for="usr">Cosmetic concerns:</label>
-                                <input type="text" class="form-control" style="height:30px" id="inputStreet" placeholder="cosmetic concerns">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                          
-                <div class="col-md-12">
-                  <div class="row">
-                
-                  <button class="btn btn-default" type="submit" style="width:350px;margin:5px;font-size:18px;">Bill</button>
-                        
-                  <input class="btn btn-primary" type="submit" name="update" value="Next Appointment" style="width:350px;margin:5px;font-size:18px;">
-  
-                </div>
-                </div>
-            
-            
-                  </div>
-                </div>
-              </div>
-  
+      <mat-sidenav mode="over" [(opened)]="opened"  style="animation: gen_css_kf_24 400ms linear 0ms 1 normal forwards running;">
+        <nav class="ts-sidebar">
+            <ul class="ts-sidebar-menu">
               
-              
-  
-              
+              <li class="ts-label">Main</li>
+              <li (click)="openDialog()"> New Patient</li>
+          
+              <li><i class="fa fa-desktop"></i> Finder</li>
+              <li><i class="fa fa-desktop"></i> Calender</li>
+              <li><i class="fa fa-desktop"></i> Reports</li>
+              <li><i class="fa fa-desktop"></i> WhatsApp Messages</li> 
+              <li><i class="fa fa-desktop"></i> Patient folder</li>
+              <li><i class="fa fa-desktop"></i> Dental awareness</li>
+              <li><i class="fa fa-desktop"></i> Before and After</li>
+              <li><i class="fa fa-desktop"></i> Prescription Templets</li>
+              <li><i class="fa fa-desktop"></i> Mebership Plans</li>
+              <li><i class="fa fa-desktop"></i> Daily Planner</li>
+              <li><i class="fa fa-desktop"></i> settings</li>
+                 
+            </ul>
+        
+        
+          </nav>
       </mat-sidenav>
   <!--------------------------------------------------------------------End of SideNav(My profile)------------------------------------------------>
   
@@ -236,8 +136,8 @@
                                       <th></th>
                                       <th></th>
                                       <th><a mat-raised-button class="btn btn-primary" style="width:100%" color="primary" >Prescription</a></th>
-                                     <th><a mat-raised-button class="btn btn-accent" style="width:100%"  color="primary" >Bill</a></th>
-                                     <th> <a mat-raised-button class="btn btn-default" style="width:100%"  color="primary">Next appointment</a></th>
+                                     <th><a mat-raised-button class="btn btn-accent" style="width:100%"  color="primary"(click)="openBill()" >Bill</a></th>
+                                     <th> <a mat-raised-button class="btn btn-default" style="width:100%"  color="primary"(click)="openAppointAdd()" >Next appointment</a></th>
                                      <th><a mat-raised-button class="btn btn-danger"style="width:100%"  color="primary">Follow Up</a></th>
                                      
                                      

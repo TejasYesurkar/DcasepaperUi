@@ -20,6 +20,10 @@ import {CheifcompComponent} from './casepaper/cheifcomp/cheifcomp.component';
 import { WorkdoneComponent } from './casepaper/workdone/workdone.component';
 import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
 import { SearchPatComponent } from './casepaper/search-pat/search-pat.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
+import { BillComponent } from './bill/bill.component';
+import { AddappointmentComponent } from './addappointment/addappointment.component';
 export const APP_DATE_FORMATS = {
   parse: {dateInput: {month: 'short', year: 'numeric', day: 'numeric'}},
   display: {
@@ -39,14 +43,19 @@ export const APP_DATE_FORMATS = {
     CasepaperComponent,
     WorkdoneComponent,
     ConfirmationDialogComponent,
-    SearchPatComponent
+    SearchPatComponent,
+    AppointmentComponent,
+    SidenavComponent,
+    BillComponent,
+    AddappointmentComponent
   ],
   entryComponents:[
     ConfirmationDialogComponent,
     WorkdoneComponent,
     CheifcompComponent,
     SearchPatComponent,
-    MyprofileComponent
+    MyprofileComponent,
+    AddappointmentComponent
     
   ],
   imports: [

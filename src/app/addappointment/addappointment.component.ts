@@ -5,17 +5,15 @@ export interface DialogData {
   complain: string;
 }
 @Component({
-  selector: 'app-myprofile',
-  templateUrl: './myprofile.component.html',
-  styleUrls: ['./myprofile.component.css']
+  selector: 'app-addappointment',
+  templateUrl: './addappointment.component.html',
+  styleUrls: ['./addappointment.component.css']
 })
-export class MyprofileComponent implements OnInit {
+export class AddappointmentComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<MyprofileComponent>,
+    public dialogRef: MatDialogRef<AddappointmentComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
-// constructor() { }
 
   ngOnInit() {
   }

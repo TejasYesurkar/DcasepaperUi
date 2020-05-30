@@ -1,0 +1,19 @@
+.invoice-title h2, .invoice-title h4 {
+    display: inline-block;
+    font-family: verdana;
+}
+
+.table > tbody > tr > .no-line {
+    border-top: none;
+    font-family: verdana;
+}
+
+.table > thead > tr > .no-line {
+    border-bottom: none;
+    font-family: verdana;
+}
+
+.table > tbody > tr > .thick-line {
+    border-top: 2px solid;
+    font-family: verdana;
+}

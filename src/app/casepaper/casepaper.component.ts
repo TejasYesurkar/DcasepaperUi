@@ -13,6 +13,8 @@ import { ConfirmationDialogComponent } from '../components/shared/confirmation-d
 import { Observable } from 'rxjs';
 import {forkJoin} from 'rxjs';
 import { map } from "rxjs/operators";
+import { BillComponent } from '../bill/bill.component';
+import { AddappointmentComponent } from '../addappointment/addappointment.component';
 export enum KEY_CODE {
   
   RIGHT_ARROW = 80,
@@ -122,7 +124,9 @@ export class CasepaperComponent implements OnInit {
   //  }  
 
   openDialog(): void {
-    const dialogRef = this.dialog.open( MyprofileComponent, {
+    const dialogRef = this.dialog.open( MyprofileComponent,
+       {
+        width: '150%',
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -134,6 +138,33 @@ export class CasepaperComponent implements OnInit {
   }
 
 
+  openBill(): void {
+    const dialogRef = this.dialog.open( BillComponent,
+       {
+        width: '150%',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // opened = false;
+  
+    });   
+
+  }
+
+  openAppointAdd(): void {
+    const dialogRef = this.dialog.open( AddappointmentComponent,
+       {
+        width: '150%',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // opened = false;
+  
+    });   
+
+  }
   openwork() {
     const dialogRef = this.dialog.open(WorkdoneComponent, {
       width: '450px',

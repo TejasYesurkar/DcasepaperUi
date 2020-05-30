@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    }
+    .panel{
+        width: 100%;
+        background-image:linear-gradient(0deg,#ffff 50%,#ffffff 50%)
+    }
+    #casepaper{
+        border: black;
+        height: 60%;
+        padding:30px;
+        
+    }
+    #work-done{
+        border: black;
+        height: 40%;
+        margin-top: 10px;
+        padding:30px;
+    }
+    .col-xs-3 {
+        padding-top: 15px;
+        width:240px;
+        margin-right:5px;
+        margin-left:12px;
+      }
+      
+      #btn-1
+      {
+          width:150px;
+          padding:8px;
+          margin-left:5px;
+          margin-right:10px;
+          font-weight:bold;
+          font-family:serif;
+          font-size:18px;
+      }
+      #btn-2
+      {
+          
+          width:100%;
+          padding:8px;
+          margin-left:5px;
+          margin-right:10px;
+          font-weight:bold;
+          font-family:serif;
+          font-size:18px;
+      }
+      #mynav a
+      {
+          position:absolute;
+          left:-160px;
+          transition:0.3s;
+          padding:15px;
+          width:200px;
+          text-decoration:none;
+          font-size:20px;
+          color:white;
+          border-radius:0 5px 5px 0;
+          text-align:right;
+      }
+    #mynav a:hover
+    {
+        left:0;
+    }
+    #profile
+    {
+        
+        background-color:black;
+    }
+    
