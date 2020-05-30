@@ -15,6 +15,7 @@ import {forkJoin} from 'rxjs';
 import { map } from "rxjs/operators";
 import { BillComponent } from '../bill/bill.component';
 import { AddappointmentComponent } from '../addappointment/addappointment.component';
+import { PrescriptionComponent } from '../prescription/prescription.component';
 export enum KEY_CODE {
   
   RIGHT_ARROW = 80,
@@ -154,6 +155,20 @@ export class CasepaperComponent implements OnInit {
 
   openAppointAdd(): void {
     const dialogRef = this.dialog.open( AddappointmentComponent,
+       {
+        width: '150%',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // opened = false;
+  
+    });   
+
+  }
+
+  openPrescription(): void {
+    const dialogRef = this.dialog.open( PrescriptionComponent,
        {
         width: '150%',
     });
