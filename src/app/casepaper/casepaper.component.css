@@ -146,3 +146,52 @@
         float: left;
       }
     }
+ /* Styles for wrapping the search box */
+
+.main {
+  width: 50%;
+  margin: 50px auto;
+}
+
+/* Bootstrap 3 text input with search icon */
+.has-search .form-control-feedback {
+  color: #ccc;
+}
+
+
+.has-search .form-control {
+  padding-right: 12px;
+  padding-left: 34px;
+}
+
+.ts-sidebar-menu li:hover
+	{
+		opacity:0.8;
+		border-top:solid white;
+		border-bottom:solid white;
+		font-size:20px;
+	}
+	.ts-sidebar-menu li
+	{
+		width:90%;
+		height:20%;
+		margin-left:5%;
+	}
+.mat-icon {
+	font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 18px; 
+  line-height: 0;
+  padding-top:15px;
+ vertical-align:center;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+	}
+	
+	

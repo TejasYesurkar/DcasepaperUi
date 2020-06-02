@@ -10,8 +10,20 @@
   <div class="spacer">  </div>
   <div class="spacer">  </div>
   
-  <!-- <a mat-raised-button class="btn btn-default" (click)="opened=!opened">My Profile</a> -->
-  
+  <div class="form-group has-feedback has-search " style="margin-left: 70%;">
+     <!-- <span class="glyphicon glyphicon-search form-control-feedback" ></span> -->
+    <input type="text" class="form-control" [formControl]="myControl" name="myControl"
+    [matAutocomplete]="auto" placeholder="Search">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+      
+    </div>
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" style="margin-left: 10px;"(click)="search(myControl.value)">
+        <mat-icon >search</mat-icon>
+      </button>
   </mat-toolbar>
   
   <!--------------------------------------------------------------------End of Toolbar------------------------------------------------>
@@ -19,36 +31,72 @@
   
   <mat-sidenav-container>
   <!--------------------------------------------------------------------Start of SideNav(My profile)------------------------------------------------>
-      <mat-sidenav mode="over" [(opened)]="opened"  style="animation: gen_css_kf_24 400ms linear 0ms 1 normal forwards running;">
-        <nav class="ts-sidebar">
-            <ul class="ts-sidebar-menu">
-              
-              <li class="ts-label">Main</li>
-              <li (click)="openDialog()"> New Patient</li>
+  <mat-sidenav mode="over" [(opened)]="opened"  style="animation: gen_css_kf_24 400ms linear 0ms 1 normal forwards running;">
+    <nav class="ts-sidebar">
+        <ul class="ts-sidebar-menu">
           
-              <li><i class="fa fa-desktop"></i> Finder</li>
-              <li><i class="fa fa-desktop"></i> Calender</li>
-              <li><i class="fa fa-desktop"></i> Reports</li>
-              <li><i class="fa fa-desktop"></i> WhatsApp Messages</li> 
-              <li><i class="fa fa-desktop"></i> Patient folder</li>
-              <li><i class="fa fa-desktop"></i> Dental awareness</li>
-              <li><i class="fa fa-desktop"></i> Before and After</li>
-              <li><i class="fa fa-desktop"></i> Prescription Templets</li>
-              <li><i class="fa fa-desktop"></i> Mebership Plans</li>
-              <li><i class="fa fa-desktop"></i> Daily Planner</li>
-              <li><i class="fa fa-desktop"></i> settings</li>
-                 
-            </ul>
-        
-        
-          </nav>
-      </mat-sidenav>
+          <li class="ts-label">Main</li>
+   
+          <li (click)="openNewPatient()"><mat-icon aria-hidden="true" aria-label="Example home icon">search</mat-icon><span style="margin-left:10px;font-size:15px">New Patient</span></li>
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">search</mat-icon><span style="margin-left:10px;font-size:15px">Finder</span></li>
+          <li><span class="hover"><mat-icon aria-hidden="true">Calender</mat-icon><span style="margin-left:10px;font-size:15px">Calender</span></span></li>
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">report</mat-icon><span style="margin-left:10px;font-size:15px">Reports</span></li>
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">message</mat-icon><span style="margin-left:10px;font-size:15px">WhatsApp Messages</span></li> 
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">folder</mat-icon><span style="margin-left:10px;font-size:15px">Patient folder</span></li>
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">message</mat-icon><span style="margin-left:10px;font-size:15px">Dental awareness</span></li>
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">image</mat-icon><span style="margin-left:10px;font-size:15px">Before and After</span></li>
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">message</mat-icon><span style="margin-left:10px;font-size:15px">Prescription Templets</span></li>
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">membership</mat-icon><span style="margin-left:10px;font-size:15px">Mebership Plans</span></li>
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">planner</mat-icon><span style="margin-left:10px;font-size:15px">Daily Planner</span></li>
+          <li><mat-icon aria-hidden="true" aria-label="Example home icon">setting</mat-icon><span style="margin-left:10px;font-size:15px">Settings</span></li>
+          
+             
+        </ul>
+    
+    
+      </nav>
+  </mat-sidenav>
   <!--------------------------------------------------------------------End of SideNav(My profile)------------------------------------------------>
-  
-  
-  
-  
+
   <mat-sidenav-content>
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Patient Detail <strong> - {{patname}} </strong>
+                </mat-panel-title>
+            <mat-panel-description>
+                    <!-- Personal & Medical Detail -->
+                    
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <div class="personal_detail" style="height:100px">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" >
+                        <address>
+                        <strong style="font-size:18px">Patient Name:</strong><span style="font-size:16px;margin-left:5px">{{patname}}</span><br>
+                        <strong style="font-size:18px">Mobile No:</strong><span style="font-size:16px;margin-left:5px">{{patMob}}</span><br>
+                        </address>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <address>
+                        <strong style="font-size:18px">Email Id:</strong><span style="font-size:16px;margin-left:5px">{{patEmail}}</span><br>
+                        <strong style="font-size:18px">Reffrence By:</strong><span style="font-size:16px;margin-left:5px">{{patRef}}</span><br>
+                        </address>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <address>
+                        <strong style="font-size:18px">Medical History:</strong><span style="font-size:16px;margin-left:5px">{{pathistory}}</span><br>
+                        <strong style="font-size:18px">Appointment Date:</strong><span style="font-size:16px;margin-left:5px">{{App}}</span><br>
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </mat-expansion-panel>
+    </mat-accordion>
          <!--------------------------------------------------------------------Start of Panel------------------------------------------------>
   
               <div class="panel" >
@@ -58,7 +106,6 @@
           <a mat-button (click)="opened=!opened" id="profile">Profile Page<i class="material-icons" style="padding-left:7px;">account_box</i></a>
         </div>
     </div>
-    
                   <div class="panel-heading" style="border-style: solid;font-family:serif;font-weight:bold;font-size:22px;background-color:#f5f5f5;padding-left:1%;">Casepaper  
                   </div>
                       <div class="panel-body"style="overflow-y: scroll;border-style: solid;height: 50%;" id="casepaper"  >
@@ -138,14 +185,10 @@
                                       <th><a mat-raised-button class="btn btn-primary" style="width:100%" color="primary" (click)="openPrescription()" >Prescription</a></th>
                                      <th><a mat-raised-button class="btn btn-accent" style="width:100%"  color="primary"(click)="openBill()" >Bill</a></th>
                                      <th> <a mat-raised-button class="btn btn-default" style="width:100%"  color="primary"(click)="openAppointAdd()" >Next appointment</a></th>
-                                     <th><a mat-raised-button class="btn btn-danger"style="width:100%"  color="primary">Follow Up</a></th>
-                                     
-                                     
+                                     <th><a mat-raised-button class="btn btn-danger"style="width:100%"  color="primary">Follow Up</a></th>  
                                   </tr>
                               </tfoot>
                           </table>
-                         
-  
                       </div> <!-- End OF Work done body -->
               </div> <!--End of Panel-->
              

@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {MyserviceService} from './services/myservice.service';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {
-MatBadgeModule,MatTableModule,MatPaginatorModule,
+MatBadgeModule,MatTableModule,MatPaginatorModule,MatExpansionModule,
 MatCardModule,MatInputModule,MatRadioModule,MatAutocompleteModule,
 MatNativeDateModule,  MatListModule,MatDatepickerModule,
 MatSidenavModule,MatToolbarModule, MatButtonModule, MatIconModule, MatDialogModule,MatSelectModule, MAT_DATE_FORMATS} from '@angular/material';
@@ -19,7 +20,7 @@ import { CasepaperComponent } from './casepaper/casepaper.component';
 import {CheifcompComponent} from './casepaper/cheifcomp/cheifcomp.component';
 import { WorkdoneComponent } from './casepaper/workdone/workdone.component';
 import { ConfirmationDialogComponent } from './components/shared/confirmation-dialog/confirmation-dialog.component';
-import { SearchPatComponent } from './casepaper/search-pat/search-pat.component';
+
 import { AppointmentComponent } from './appointment/appointment.component';
 import { SidenavComponent } from './components/shared/sidenav/sidenav.component';
 import { BillComponent } from './bill/bill.component';
@@ -44,7 +45,7 @@ export const APP_DATE_FORMATS = {
     CasepaperComponent,
     WorkdoneComponent,
     ConfirmationDialogComponent,
-    SearchPatComponent,
+    
     AppointmentComponent,
     SidenavComponent,
     BillComponent,
@@ -55,7 +56,7 @@ export const APP_DATE_FORMATS = {
     ConfirmationDialogComponent,
     WorkdoneComponent,
     CheifcompComponent,
-    SearchPatComponent,
+    
     PrescriptionComponent,
     MyprofileComponent,
     AddappointmentComponent
@@ -80,15 +81,16 @@ export const APP_DATE_FORMATS = {
     MatButtonModule, 
     MatPaginatorModule,
     MatIconModule,
+    MatExpansionModule,
     MatDialogModule,
     MatTableModule,
     HttpClientModule,
     MatSelectModule,
     BrowserAnimationsModule
   ],
-  providers: [,{
+  providers: [MyserviceService,{
     provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS
- }],
+ },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

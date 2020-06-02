@@ -13,10 +13,6 @@ import { BillComponent } from './bill/bill.component';
 
 
 const routes: Routes = [
-  // {path: '', component:LoginPageComponent},
-  // {path: 'home', component:HomePageComponent,children:[
-  //   {path: 'dash', component:DashboardComponent},
-  // ]},
   {path:'',component:CasepaperComponent},
   {path:'work',component:WorkdoneComponent},
   {path:'chief',component:CheifcompComponent},
